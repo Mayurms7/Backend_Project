@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <%- include('navbar') %>
+</head>
+
+<body style="background-color: rgb(103, 204, 235)">
+    <form class="w-50 mx-auto mt-5" action="/company/allocateStudent" method="post" style="
+				height: 70%;
+				display: grid;
+				place-content: center;
+				background: white;
+				border-radius: 5px;
+				box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.05);
+				padding: 50px 70px;
+			">
+        <h2 style="text-align: center;font-weight: bold;">Schedule Interview</h2>
+        <hr>
+        <%- include('flash')%>
+        <fieldset>
+            <label for="name" class="form-label"> Student Name :- </label>
+            <select class="form-select" aria-label="Default select example" name="id" id="name">
+                <option selected disabled>Select Student</option>
+
+                <%for(let student of students){%>
+                    <option value="<%=student.id%>">
+                        <%= student.name %>
+                    </option>
+                    <%}%>
+            </select></select>
+        </fieldset>
+
+        <fieldset>
+            <div class="mb-3">
+                <label for="name" class="form-label">Company Name :- </label>
+                <input type="text" class="form-control" id="company" name="company" required />
+            </div>
+            <div class="mb-3">
+                <label for="Date" class="form-label">Date :- </label>
+                <input type="date" class="form-control" id="date"  name="date" required />
+            </div>
+            <hr>
+        <button type="submit" class="btn btn-primary align-self-center">Schedule Interview</button>
+    </form>
+</body>
+
+</html>

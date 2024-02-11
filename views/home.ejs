@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <%- include('navbar') %>
+</head>
+<body>
+        <div class="w-75 mx-auto mt-5">
+            <%- include('flash')%>
+            <div class="row">
+                <div class="col-6">
+                    <h2>List of Students</h2>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                    <a href="/addStudent" type="button" class="btn btn-info align-self-center">Add Student</a>
+                </div>
+            </div>
+            <% if(Students.length> 0) {%>
+                <table class="table table-borderd table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Batch</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Phone No</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">College</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">DSA Final Score</th>
+                            <th scope="col">WebD Final Score</th>
+                            <th scope="col">React Final Score</th>
+                            <th scope="col">Interviews</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for( let student of Students) {%>
+                            <tr>
+                                <th scope="row">
+                                    <%=student.batch%>
+                                </th>
+                                <td>
+                                    <%=student.name%>
+                                </td>
+                                <td>
+                                    <%=student.email%>
+                                </td>
+                                <td>
+                                    <%=student.phone_no%>
+                                </td>
+                                <td>
+                                    <%=student.college%>
+                                </td>
+                                <td>
+                                    <%=student.placement_status%>
+                                </td>
+                                <td>
+                                    <%=student.dsa%>
+                                </td>
+                                <td>
+                                    <%=student.webD%>
+                                </td>
+                                <td>
+                                    <%=student.react%>
+                                </td>
+                                <%if (student.interviews.length){%>
+                                    <td>
+                                        <% for(let company of student.interviews){%>
+                                            <a href=" " id="compnay_name">
+                                                <%=company.company%>
+                                            </a>
+                                            <%}%>
+                                    </td>
+                                    <%}else{%>
+                                        <td>NONE</td>
+                                        <%}%>
+                                    <td>
+                                        <a href="/deleteStudent/<%=student.id%>" class="btn btn-danger btn-sm" tabindex="-1" role="button" aria-disabled="true">Delete</a>
+                                    </td>
+                            </tr>
+                            <%}%>
+                    </tbody>
+                </table>
+                <%}%>
+        </div>
+</body>
+
+</html>

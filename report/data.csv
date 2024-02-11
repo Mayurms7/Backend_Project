@@ -1,0 +1,4 @@
+S.No, Name, Email, College, Placement_status, Contact Number, Batch, DSA Score, WebDev Score, React Score, Interview, Date, Result
+1,Mayur Suresh Sutar,mayursutar@gmail.com,XYZ,Not Placed,+919130565776,A1,70,70,70,undefined,2023-10-05,Pending
+2,Mayur Suresh Sutar,mayur@gmail.com,XYZ,Not Placed,+919130565776,A1,70,70,70,ABC,2023-10-05,Not Selected,Amazon,2023-09-29,Selected
+3,John Wick,jwick@gmail.com,MIT,Not Placed,789654123,A1,88,88,88,undefined,2023-10-06,Pending,Amazon,2023-10-19,Pending,Amazon,2024-02-18,Pending

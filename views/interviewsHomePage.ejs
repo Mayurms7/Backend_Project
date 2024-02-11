@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <%- include('navbar') %>
+</head>
+<body>
+    <div class="w-75 mx-auto mt-5">
+        <%- include('flash')%>
+            <div class="row">
+                <div class="col-6">
+                    <h2>List of Students Interviews</h2>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                    <a href="/company/scheduleInterview" type="button" class="btn btn-info align-self-center">Schedule
+                        Interview</a>
+                </div>
+            </div>
+            <table class="table table-borderd table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Company Name</th>
+                        <th scope="col">Batch</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Phone No</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">College</th>
+                        <th scope="col">Interview Date</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tbody id="myTable">
+                    <% for(let student of students){%>
+                        <%i=0%>
+                            <% while(i< student.interviews.length){%>
+                                <tr class="row-ref">
+                                    <td scope="row">
+                                        <%=student.interviews[i].company%>
+                                    </td>
+                                    <td>
+                                        <%=student.batch%>
+                                    </td>
+                                    <td>
+                                        <%=student.name%>
+                                    </td>
+                                    <td>
+                                        <%=student.phone_no%>
+                                    </td>
+                                    <td>
+                                        <%=student.email%>
+                                    </td>
+                                    <td>
+                                        <%=student.college%>
+                                    </td>
+                                    <td>
+                                        <%=student.interviews[i].date%>
+                                    </td>
+                                    <td>
+                                        <form style="display: flex; align-items: center; justify-content: center"
+                                            action="/company/update-status/<%=student.id%>" method="post">
+                                            <input hidden type="text" name="companyName"
+                                                value="<%=student.interviews[i].company%>" />
+
+                                            <select class="form-select" aria-label="Default select example"
+                                                name="companyResult" id="status" style="min-width: 130px">
+                                                <option selected id="delete-options">
+                                                    <%=student.interviews[i].result%>
+                                                </option>
+                                                <option value="Selected">Selected</option>
+                                                <option value="Not Selected">Not Selected</option>
+                                                <option value="On Hold">On Hold</option>
+                                                <option value="Pending">Pending</option>
+                                            </select>
+
+                                            <button type="submit" class="btn btn-warning btn-small m-2">Update</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <%i++%>
+                                    <%}%>
+                                        <%}%>
+                </tbody>
+                </tbody>
+            </table>
+    </div>
+</body>
+
+</html>
