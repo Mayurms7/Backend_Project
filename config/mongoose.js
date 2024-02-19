@@ -2,7 +2,7 @@
 const mongoose=require('mongoose');
 
 //connect to DB
-mongoose.connect('mongodb://localhost/placement_cell_db');
+mongoose.connect('mongodb+srv://mayurms7:mayursutarms7@placementcelldb.2ytrkrl.mongodb.net/?retryWrites=true&w=majority');
 
 //acquire the conection
 const db=mongoose.connection;
