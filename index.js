@@ -6,6 +6,7 @@ const useController = require("./controller/userController");
 const flash=require('connect-flash')
 const app = express();
 const session = require("express-session");
+const memoryStore = require('memorystore')(session)
 const passport = require("passport");
 const passportLocal = require("./config/passport_auth");
 const customWare= require('./config/flashMsg');
@@ -23,6 +24,9 @@ app.use(
     cookie: {
       maxAge: 1000 * 60 * 100,
     },
+    store: new MemoryStore({
+      checkPeriod: 86400000 // prune expired entries every 24h
+    })
   })
 );
 
