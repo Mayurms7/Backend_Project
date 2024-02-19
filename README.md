@@ -19,16 +19,16 @@
   ![Sign-In](./images/Sign_In.png)
 
 - Student Page
-  ![Student-Page](./images/List%20Of%20Students.png.PNG)
+  ![Student-Page](./images/ListOfStudents.png)
 
 - Interview Page
-  ![Interview-Page](./images/List%20of%20Interviews.png.PNG)
+  ![Interview-Page](./images/ListofInterviews.png)
 
 - Add student
-  ![Add-Student](./images/Add%20Student.png.PNG)
+  ![Add-Student](./images/AddStudent.png)
 
 - Schedule Interview
-  ![Interview](./images/Schedule%20Interview.png.PNG)
+  ![Interview](./images/ScheduleInterview.png)
 
 ## Setup
 
