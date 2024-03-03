@@ -1,0 +1,24 @@
+{
+  "name": "employee_review_system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mayurms7/Backend_Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mayurms7/Backend_Project/issues"
+  },
+  "homepage": "https://github.com/Mayurms7/Backend_Project#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "mongoose": "^8.2.0",
+    "node-gyp": "^10.0.1"
+  }
+}
